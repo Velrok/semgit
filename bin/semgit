@@ -29,16 +29,25 @@ end
 
 def increment_major(version)
   version.major += 1
+  version.minor = 0
+  version.patch = 0
+  version.prerelease = nil
+  version.metadata = nil
   version
 end
 
 def increment_minor(version)
   version.minor += 1
+  version.patch = 0
+  version.prerelease = nil
+  version.metadata = nil
   version
 end
 
 def increment_patch(version)
   version.patch += 1
+  version.prerelease = nil
+  version.metadata = nil
   version
 end
 
