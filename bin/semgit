@@ -46,7 +46,7 @@ end
 
 def main(args)
   if args["current"]
-    print_current_version if
+    print_current_version
   elsif args["inc"]
     current_version = versions.max
     current_version = SemVersion.new("0.0.0") if current_version.nil?
