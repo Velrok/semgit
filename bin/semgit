@@ -1,7 +1,6 @@
 #!/usr/bin/env ruby
 
 $LOAD_PATH.unshift File.expand_path("../lib", __FILE__)
-# puts $LOAD_PATH
 require 'semgit'
 require 'sem_version'
 require 'docopt'
@@ -10,7 +9,7 @@ Automated semantic tagging for git.
 
 Usage:
   #{__FILE__} current
-  #{__FILE__} inc (major | minor | patch) 
+  #{__FILE__} inc (major | minor | patch)
 DOCOPT
 
 
@@ -46,15 +45,16 @@ def create_new_tag(version)
 end
 
 def main(args)
-  return print_current_version if args["current"] 
-  if args["inc"]
+  if args["current"]
+    print_current_version if
+  elsif args["inc"]
     current_version = versions.max
     current_version = SemVersion.new("0.0.0") if current_version.nil?
 
     new_version = increment_major(current_version) if args["major"]
     new_version = increment_minor(current_version) if args["minor"]
     new_version = increment_patch(current_version) if args["patch"]
-    
+
     create_new_tag(new_version)
   end
 end
