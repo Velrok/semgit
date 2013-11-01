@@ -2,15 +2,21 @@
 
 Automated semantic tagging for git.
 
+Automatically creates new tags if a mendatory description is given.
+Leave description empty to cancle.
+
 ## Installation
 
 `gem install semgit`
 
 ## Usage
 
+```
 Usage:
   semgit current
   semgit inc (major | minor | patch)
+```
+
 
 ## Contributing
 
