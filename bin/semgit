@@ -16,7 +16,9 @@ DOCOPT
 def versions
   tags = `git tag`.split("\n")
 
-  tags.each_with_object([]) do |tag, a|
+  tags.each_with_object([]) do |raw_tag, a|
+    m = /.*(\d+.\d*.\d+.*)/.match(raw_tag)
+    tag = m[1]
     a << SemVersion.new(tag) if SemVersion.valid?(tag)
   end
 end
