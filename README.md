@@ -1,24 +1,16 @@
 # Semgit
 
-TODO: Write a gem description
+Automated semantic tagging for git.
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-    gem 'semgit'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install semgit
+`gem install semgit`
 
 ## Usage
 
-TODO: Write usage instructions here
+Usage:
+  semgit current
+  semgit inc (major | minor | patch)
 
 ## Contributing
 
@@ -27,3 +19,7 @@ TODO: Write usage instructions here
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+## License
+
+MIT License
