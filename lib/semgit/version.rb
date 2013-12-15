@@ -1,3 +1,3 @@
 module Semgit
-  VERSION = "1.0.1"
+  VERSION = `bin/semgit current`
 end
