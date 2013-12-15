@@ -18,8 +18,10 @@ def versions
 
   tags.each_with_object([]) do |raw_tag, a|
     m = /.*(\d+.\d*.\d+.*)/.match(raw_tag)
-    tag = m[1]
-    a << SemVersion.new(tag) if SemVersion.valid?(tag)
+    if not m.nil?
+      tag = m[1]
+      a << SemVersion.new(tag) if SemVersion.valid?(tag)
+    end
   end
 end
 
